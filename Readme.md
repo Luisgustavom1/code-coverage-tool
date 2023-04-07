@@ -1,3 +1,10 @@
+To testing the tool
+
+Obs :. Node version `v19.3.0`
+```bash
+node coverage.mjs
+```
+
 https://www.youtube.com/watch?v=tDySiZck3jk
 
 https://nodejs.org/api/inspector.html
