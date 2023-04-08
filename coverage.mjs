@@ -51,7 +51,7 @@ function generateCoverageReport(filename, sourceCode, functions) {
         for (const range of func.ranges) {
             if (range.count !== 0) continue;
 
-            const startLine = sourceCode.substring(0, range.startOffset).split("\n").length;
+            const startLine = sourceCode.substring(0, range.startOffset + 1).split("\n").length;
             const endLine = sourceCode.substring(0, range.endOffset).split("\n").length;
             for (let lineIndex = startLine; lineIndex <= endLine; lineIndex++) {
                 uncoveredLine.set(lineIndex, lineIndex);
@@ -65,7 +65,7 @@ function generateCoverageReport(filename, sourceCode, functions) {
             console.log(COLORS.RED + line + COLORS.END_LINE);
             return;
         };
-
+        
         console.log(line);
     })
 }
